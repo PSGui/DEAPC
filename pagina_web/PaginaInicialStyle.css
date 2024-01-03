@@ -1,0 +1,197 @@
+
+
+body {
+    margin: 0;
+}
+/*--------------------------------------*/
+            /* Botão HomePage */
+
+.top-pag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background-color: #56c39bac;
+}
+
+.logo-button {
+    text-align: center;
+}
+
+.logo {
+    width: 220px;
+    height: auto;
+}
+
+
+/*--------------------------------------*/
+         /* Botão Login/Registo */
+
+.login-button {
+    position: absolute;
+    font-size: 18px;
+    top: 70px;
+    right: 50px;
+}
+
+/*--------------------------------------*/
+         /* Botão Pesquisa Voos */
+
+.pesquisa-voos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lupa {
+    width: 30px;
+    height: 30px;
+}
+
+.text {
+    font-size: 25px;
+}
+
+/*--------------------------------------*/
+    /* Imagens de Voos Recomendados*/
+
+.imagens-voos-recomendados {
+    display: flex;
+}
+
+.voos-em-desconto {
+    display: flex;
+}
+
+.img-roma {
+    width: 600px;
+    height: 350px;
+    border-radius: 2%;
+}
+
+.img-portorico {
+    width: 600px;
+    height: 350px;
+    border-radius: 2%;
+}
+
+.img-amesterdao {
+    width: 600px;
+    height: 350px;
+    border-radius: 2%;
+}
+
+.img-aviao {
+    width: 600px;
+    height: 250px;
+    border-radius: 3%;
+    top: auto;
+}
+
+.wrap-imagem {
+    position: relative;
+    flex: 1;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.overlay-text {
+    position: absolute;
+    top: -2%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0);
+    color: #ffffff;
+  }
+  
+  .overlay-text h4,
+  .overlay-text a {
+    margin: 0;
+    padding: 5px;
+  }
+  
+  .overlay-text a.overlay-link {
+    position: absolute;
+    bottom: 10px;
+  }
+
+/*--------------------------------------*/
+        /* Voos em Desconto*/
+
+.voos-em-desconto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/*----------------------------------------------------*/
+        /* Contactos e Prémios - Fundo da Página*/
+
+.fim-pagina {
+    position: relative;
+}
+          
+.container {
+    position: relative;
+    background-color: #4a4a4a99;
+}
+          
+.contactos {
+    position: relative;
+    bottom: -5px;
+    left: 40px;
+    color: #ffffff;
+}
+          
+.premios {
+    position: absolute ;
+    bottom: 10px;
+    right: 40px;
+    color: #ffffff;
+}
+
+/*----------------------------------------------------*/
+
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .popup .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+  }
+  
+  .popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+  
+  .popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+  }

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="CheckoutStyle.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAP Voos - Checkout</title>
+</head>
+<body>
+
+    <div class="top-pag">
+        <h2><a href="paginainicial.html" class="logo-button"><img src="taplogo.png" alt="Logo" class="logo"></a></h2>
+        <a href="Login.html" class="login-button">Login ou Registe-se!</a>
+    </div>
+
+    <script type="text/JavaScript">
+
+      function valida()
+      {
+          document.getElementById("place").innerHTML="<b>Chamada à função de validação! ;)<b>";
+
+          var nome = formCheckout.primeironome.value;
+          var nome2 = formCheckout.segundonome.value;
+          var email = formCheckout.email.value;
+          var telefone = formCheckout.telefone.value;
+          var pais = formCheckout.pais.value;
+          
+          var detetor1=/[^a-zA-Z]/;
+          var detetor2=/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+          var detetor3=/[^0-9]/;
+          var flag1 = detetor1.test(nome);
+          var flag2 = detetor2.test(email);
+          var flag3 = detetor3.test(telefone);
+          
+      
+          c1 = document.getElementById("nome");
+          if(nome.length==0 || nome.lenght < 2)
+          {
+            window.alert("É necessário preencher o campo do Nome/Nome inválido");
+            c1.value = "Campo vazio";
+            c1.style.border="2px dashed black";
+            c1.style.background="red";
+            return false;
+          }
+          else if(isNaN(nome) && !flag1)
+                {
+                  c1.value = "Campo OK!";
+                  c1.style.background="green"; 
+                }
+                else
+                {
+                  window.alert("Campo Inválido!");
+                  c1.value = "Campo Inválido!";
+                  c1.style.border="2px dashed brown";
+                  c1.style.background="magenta"; 
+                  return false;     
+                }
+      
+          c2 = document.getElementById("apelido");
+          if(nome.length==0 || nome.lenght < 2)
+          {
+            window.alert("É necessário preencher o campo do Nome/Nome inválido");
+            c2.value = "Campo vazio";
+            c2.style.border="2px dashed black";
+            c2.style.background="red";
+            return false;
+          }
+          else if(isNaN(nome) && !flag1)
+                {
+                  c2.value = "Campo OK!";
+                  c2.style.background="green"; 
+                }
+                else
+                {
+                  window.alert("Campo Inválido!");
+                  c2.value = "Campo Inválido!";
+                  c2.style.border="2px dashed brown";
+                  c2.style.background="magenta"; 
+                  return false;     
+                }
+          
+          c3 = document.getElementById("email");
+          if(email.lenght==0 || email.lenght < 5)
+          {
+            window.alert("O campo idade está vazio!/Email inválido");
+            c3.value = "Campo vazio";
+            c3.style.border="2px dashed black";
+            c3.style.background="red";
+            return false;
+          }
+          else if(!flag2)
+                {
+                  c3.value = "Campo OK!";
+                  c3.style.background="green"; 
+                }
+                else
+                {
+                  window.alert("Campo Inválido!");
+                  c3.value = "Campo Inválido!";
+                  c3.style.border="2px dashed brown";
+                  c3.style.background="magenta"; 
+                  return false;
+                }
+
+          c4 = document.getElementById("telefone");
+          if(telefone.lenght != 9 )
+          {
+            window.alert("O campo telefone está vazio!/Telefone Inválido");
+            c4.value = "Campo vazio";
+            c4.style.border="2px dashed black";
+            c4.style.background="red";
+            return false;
+          }
+          else if(!flag3)
+                {
+                  c4.value = "Campo OK!";
+                  c4.style.background="green"; 
+                }
+                else
+                {
+                  window.alert("Campo Inválido!");
+                  c4.value = "Campo Inválido!";
+                  c4.style.border="2px dashed brown";
+                  c4.style.background="magenta"; 
+                  return false;
+                }
+
+          c5 = document.getElementById("pais");
+          if(formCheckout.pais.selectedIndex === 0) {
+
+          alert('Por favor selecione o país associado ao seu CC');
+          return false;
+          }
+
+          c6 = document.getElementById("titular");
+          
+      
+         return true;
+        }
+      </script>
+    
+
+  <form method="get" action="" name="formCheckout" onsubmit="return valida()">
+    <div class="container-form">
+        <div class="lado-a-lado">
+            <h2 class="centrar">Checkout</h2>
+            <h3 class="centrar">Dados pessoais</h3>
+        </div>
+            <div class="nome-completo">
+                <div class="input-wrapper">
+                    <h5 class="centrar">Nome próprio</h5>
+                    <input class="user-input" type="text" name="primeironome" id="nome" placeholder="Nome próprio">
+                </div>
+                <div class="input-wrapper">
+                    <h5 class="centrar">Apelido</h5>
+                    <input class="user-input" type="text" name="segundonome" id="apelido" placeholder="Apelido">
+                </div>
+            </div>
+        <br>
+        <br>
+        <h5>Email</h5>
+        <input type="text" name="email" id="email" placeholder="email">
+        <br>
+        <br>
+        <h5>Telefone</h5>
+        <input type="text" name="telefone" id="telefone" placeholder="telefone">
+        <br>
+        <br>
+        <h5>Nacionalidade</h5>
+        <select name="pais" id="pais">
+            <option value="">Selecione um país</option>
+                <option value="AL">Albânia</option>
+                <option value="DE">Alemanha</option>
+                <option value="AD">Andorra</option>
+                <option value="AM">Armênia</option>
+                <option value="AT">Áustria</option>
+                <option value="AZ">Azerbaijão</option>
+                <option value="BE">Bélgica</option>
+                <option value="BY">Belarus</option>
+                <option value="BA">Bósnia e Herzegovina</option>
+                <option value="BG">Bulgária</option>
+                <option value="HR">Croácia</option>
+                <option value="CY">Chipre</option>
+                <option value="CZ">República Tcheca</option>
+                <option value="DK">Dinamarca</option>
+                <option value="EE">Estônia</option>
+                <option value="FI">Finlândia</option>
+                <option value="FR">França</option>
+                <option value="GE">Geórgia</option>
+                <option value="GR">Grécia</option>
+                <option value="HU">Hungria</option>
+                <option value="IS">Islândia</option>
+                <option value="IE">Irlanda</option>
+                <option value="IT">Itália</option>
+                <option value="KZ">Cazaquistão</option>
+                <option value="KG">Quirguistão</option>
+                <option value="LV">Letônia</option>
+                <option value="LI">Liechtenstein</option>
+                <option value="LT">Lituânia</option>
+                <option value="LU">Luxemburgo</option>
+                <option value="MK">Macedônia do Norte</option>
+                <option value="MT">Malta</option>
+                <option value="MD">Moldávia</option>
+                <option value="MC">Mônaco</option>
+                <option value="ME">Montenegro</option>
+                <option value="NL">Países Baixos</option>
+                <option value="NO">Noruega</option>
+                <option value="PL">Polônia</option>
+                <option value="PT">Portugal</option>
+                <option value="RO">Romênia</option>
+                <option value="RU">Rússia</option>
+                <option value="SM">San Marino</option>
+                <option value="RS">Sérvia</option>
+                <option value="SK">Eslováquia</option>
+                <option value="SI">Eslovênia</option>
+                <option value="ES">Espanha</option>
+                <option value="SE">Suécia</option>
+                <option value="CH">Suíça</option>
+                <option value="TR">Turquia</option>
+                <option value="UA">Ucrânia</option>
+                <option value="GB">Reino Unido</option>
+                <option value="VA">Vaticano</option>
+        </select>
+        <br>
+        <br>
+        <h3>Pagamento</h3>
+        <h5>Dados do cartão</h5>
+        <div class="cartao-wrapper">
+            <div class="input-wrapper">
+                <h5 class="centrar">Titular do cartão</h5>
+                <input class="user-input" type="text" name="titular" id="c5" placeholder="Titular do cartão">
+            </div>
+            <div class="input-wrapper">
+                <h5 class="centrar">Número do cartão</h5>
+                <input class="user-input" type="text" name="numero" id="c6" placeholder="xxxx xxxx xxxx xxx">
+            </div>
+            <div class="input-wrapper">
+                <h5 class="centrar">Expira</h5>
+                <input class="user-input" type="text" name="expira" id="c7" placeholder="MM/AA">
+            </div>
+            <div class="input-wrapper">
+                <h5 class="centrar">CVV</h5>
+                <input class="user-input" type="text" name="cvv" id="c8" placeholder="CVV">
+            </div>
+        </div>
+        <button type="submit">Submeter</button>
+    </div>
+  </form>
+
+    <br>
+    <br>
+    <br>   
+
+    <div class="fim-pagina">
+        <div class="container">
+          <div class="contactos">
+            <h3>Contactos</h3>
+            <p>Telemóvel: +351 639 230 943</p>
+            <p>Email: tapapoiocliente@gmail.com</p>
+            <a href="contactos.html" class="contactos" target="_blank">Poderá deixar o seu contacto ou enviar-nos uma mensagem aqui!</a>
+          </div>
+          <br>
+          <div class="premios">
+            <h3>Prémios</h3>
+            <ul>
+              <li>2022 Onboard Safety Award</li>
+              <li>2021 Design Excellence Award</li>
+              <li>2020 Innovation Award</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+</body>
