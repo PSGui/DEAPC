@@ -1,5 +1,5 @@
 # DEAPC
-Desenvolvimento de Aplicações Computacionais - Cadeira ISEP
+Computer Apps Development - Class at ISEP
 
 Here is a small preview of an initiation to a web development project in which we had the task of creating a functional website using PHP, SQLite and Apache as well as using HTML and CSS
 
